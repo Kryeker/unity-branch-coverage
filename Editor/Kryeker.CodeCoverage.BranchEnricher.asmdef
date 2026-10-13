@@ -1,0 +1,19 @@
+{
+    "name": "Kryeker.CodeCoverage.BranchEnricher",
+    "rootNamespace": "Kryeker.CodeCoverage",
+    "references": [
+        "Unity.TestTools.CodeCoverage.Editor",
+        "Unity.TestTools.CodeCoverage.Editor.OpenCover.Model",
+        "Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}

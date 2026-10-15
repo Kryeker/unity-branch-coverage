@@ -1,2 +1,19 @@
-[Library]
-*.meta
+# Unity package cache / generated folders — never commit
+Library/
+Temp/
+Obj/
+Build/
+Builds/
+Logs/
+UserSettings/
+
+# Unity generates .meta sidecars for local file: usage — keep them tracked
+# (official UPM packages commit .meta, e.g. needle-mirror/com.unity.testtools.codecoverage)
+
+# OS / IDE noise
+.DS_Store
+Thumbs.db
+*.tmp
+*.user
+.vs/
+.idea/

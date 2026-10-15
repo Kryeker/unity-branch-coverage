@@ -32,7 +32,7 @@ so the reports show a meaningful branch-coverage column.
 
 ## Why synthetic
 
-Unity 2020.3's `UnityEngine.TestTools.Coverage` API only exposes **sequence points**
+Unity's `UnityEngine.TestTools.Coverage` API only exposes **sequence points**
 (`line/column/hitCount/ilOffset`). The stock `OpenCoverReporter` therefore always writes
 empty `BranchPoints`. This package disassembles each covered method's IL (via the
 `Mono.Reflection` copy vendored inside the coverage package) and emits two branch paths
@@ -61,7 +61,7 @@ column is still populated.
 Via git URL in `Packages/manifest.json`:
 
 ```json
-"com.kryeker.codecoverage-branch": "https://github.com/<owner>/unity-codecoverage-branch.git"
+"com.kryeker.codecoverage-branch": "https://github.com/Kryeker/unity-codecoverage-branch.git#v1.0.0"
 ```
 
 Or as a local folder during development:
@@ -76,6 +76,15 @@ Requires `com.unity.testtools.codecoverage: 1.2.7` (declared in this package's `
 
 `Tests/branch-example.xml` is a hand-written fixture showing the enriched output shape
 (4 sequence points → 4 branch points, `branchCoverage="75.00"`).
+
+`Tests/Editor/BranchSynthesizerTests.cs` (EditMode, NUnit) covers the pure synthesis
+logic: `SynthesizeFromSequencePoints` (visited/unvisited mapping, ordinal/usp id
+sequencing, null/empty guards) and `Synthesize` guards (null method, empty points,
+method without IL body).
+
+## License
+
+MIT — see [LICENSE.md](LICENSE.md). Changelog: [CHANGELOG.md](CHANGELOG.md).
 
 ## C# level
 

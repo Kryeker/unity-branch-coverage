@@ -3,7 +3,7 @@
   "displayName": "Code Coverage Branch Enricher",
   "version": "1.0.0",
   "unity": "2020.3",
-  "description": "Local wrapper over com.unity.testtools.codecoverage 1.2.7 that synthesizes OpenCover BranchPoints from IL (cond branches + switches) and backfills branch summaries, so HTML/Cobertura/SonarQube reports show branch coverage. Visit counts are heuristic (derived from nearby sequence-point hits) because the Unity 2020 Coverage API only exposes sequence points.",
+  "description": "Local wrapper over com.unity.testtools.codecoverage 1.2.7 that synthesizes OpenCover BranchPoints from IL (cond branches + switches) and backfills branch summaries, so HTML/Cobertura/SonarQube reports show branch coverage. Visit counts are heuristic (derived from nearby sequence-point hits) because Unity's Coverage API only exposes sequence points.",
   "keywords": [
     "test",
     "coverage",
@@ -11,8 +11,18 @@
     "opencover"
   ],
   "author": {
-    "name": "Kryeker"
+    "name": "Kryeker",
+    "url": "https://github.com/Kryeker"
   },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kryeker/unity-codecoverage-branch.git"
+  },
+  "homepage": "https://github.com/Kryeker/unity-codecoverage-branch",
+  "documentationUrl": "https://github.com/Kryeker/unity-codecoverage-branch/blob/main/README.md",
+  "changelogUrl": "https://github.com/Kryeker/unity-codecoverage-branch/blob/main/CHANGELOG.md",
+  "licensesUrl": "https://github.com/Kryeker/unity-codecoverage-branch/blob/main/LICENSE.md",
   "dependencies": {
     "com.unity.testtools.codecoverage": "1.2.7"
   }

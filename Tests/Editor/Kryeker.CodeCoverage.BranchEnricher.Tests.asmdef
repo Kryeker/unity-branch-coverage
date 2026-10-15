@@ -1,0 +1,24 @@
+{
+    "name": "Kryeker.CodeCoverage.BranchEnricher.Tests",
+    "rootNamespace": "Kryeker.CodeCoverage.Tests",
+    "references": [
+        "Kryeker.CodeCoverage.BranchEnricher",
+        "Unity.TestTools.CodeCoverage.Editor.OpenCover.Model"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

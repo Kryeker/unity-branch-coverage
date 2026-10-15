@@ -8,7 +8,7 @@ namespace Kryeker.CodeCoverage
 {
     /// <summary>
     /// Builds synthetic OpenCover <see cref="BranchPoint"/>s from IL.
-    /// Unity 2020's Coverage API only exposes sequence points, so visit counts
+    /// Unity's Coverage API only exposes sequence points, so visit counts
     /// are heuristic: a path counts as visited when the sequence point at its
     /// target offset was hit. This is an approximation, not instrumentation.
     /// </summary>

@@ -1,6 +1,6 @@
 {
-    "name": "Kryeker.CodeCoverage.BranchEnricher",
-    "rootNamespace": "Kryeker.CodeCoverage",
+    "name": "Kryeker.BranchCoverage",
+    "rootNamespace": "Kryeker.BranchCoverage",
     "references": [
         "Unity.TestTools.CodeCoverage.Editor",
         "Unity.TestTools.CodeCoverage.Editor.OpenCover.Model",

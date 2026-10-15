@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Example: output shape produced by BranchCoverageEnricher.EnrichFile.
+<!-- Example: output shape produced by BranchCoverage.EnrichFile.
      Hand-written fixture, no machine-specific paths. Branch visit counts are
      heuristic (derived from nearby sequence-point hits), not instrumented. -->
 <CoverageSession xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="1.2.7">

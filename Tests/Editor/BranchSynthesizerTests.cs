@@ -2,7 +2,7 @@ using System.Reflection;
 using NUnit.Framework;
 using OpenCover.Framework.Model;
 
-namespace Kryeker.CodeCoverage.Tests
+namespace Kryeker.BranchCoverage.Tests
 {
     [TestFixture]
     internal sealed class BranchSynthesizerTests

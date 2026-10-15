@@ -4,7 +4,7 @@ using System.Reflection.Emit;
 using Mono.Reflection;
 using OpenCover.Framework.Model;
 
-namespace Kryeker.CodeCoverage
+namespace Kryeker.BranchCoverage
 {
     /// <summary>
     /// Builds synthetic OpenCover <see cref="BranchPoint"/>s from IL.

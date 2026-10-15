@@ -1,8 +1,8 @@
 using UnityEditor;
 
-namespace Kryeker.CodeCoverage
+namespace Kryeker.BranchCoverage
 {
-    internal static class BranchEnricherMenu
+    internal static class BranchCoverageMenu
     {
         [MenuItem("Tools/Code Coverage/Enrich Branch Points In OpenCover XMLs...")]
         private static void EnrichFromMenu()
@@ -21,15 +21,15 @@ namespace Kryeker.CodeCoverage
                 total++;
                 try
                 {
-                    enriched += BranchCoverageEnricher.EnrichFile(file);
+                    enriched += BranchCoverage.EnrichFile(file);
                 }
                 catch (System.Exception ex)
                 {
-                    UnityEngine.Debug.LogWarning("[BranchEnricher] Failed to enrich '" + file + "': " + ex.Message);
+                    UnityEngine.Debug.LogWarning("[BranchCoverage] Failed to enrich '" + file + "': " + ex.Message);
                 }
             }
 
-            EditorUtility.DisplayDialog("Branch Enricher",
+            EditorUtility.DisplayDialog("Branch Coverage",
                 "Processed " + total + " file(s), added " + enriched + " synthetic branch point(s).\nCounts are heuristic (sequence-derived), not instrumented.",
                 "OK");
         }

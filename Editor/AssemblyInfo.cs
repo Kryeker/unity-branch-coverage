@@ -1,3 +1,3 @@
 using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("Kryeker.CodeCoverage.BranchEnricher.Tests")]
+[assembly: InternalsVisibleTo("Kryeker.BranchCoverage.Tests")]

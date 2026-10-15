@@ -10,7 +10,7 @@ using SysReflectionModule = System.Reflection.Module;
 using SysType = System.Type;
 using IOFile = System.IO.File;
 
-namespace Kryeker.CodeCoverage
+namespace Kryeker.BranchCoverage
 {
     /// <summary>
     /// Subscribes to the Code Coverage session-finished event and backfills
@@ -18,9 +18,9 @@ namespace Kryeker.CodeCoverage
     /// ReportGenerator (Html/Cobertura/SonarQube) runs.
     /// </summary>
     [InitializeOnLoad]
-    internal static class BranchCoverageEnricher
+    internal static class BranchCoverage
     {
-        static BranchCoverageEnricher()
+        static BranchCoverage()
         {
             UnityEditor.TestTools.CodeCoverage.Events.onCoverageSessionFinished += OnSessionFinished;
         }
@@ -46,7 +46,7 @@ namespace Kryeker.CodeCoverage
                 }
                 catch (Exception ex)
                 {
-                    Debug.LogWarning("[BranchEnricher] Failed to enrich '" + path + "': " + ex.Message);
+                    Debug.LogWarning("[BranchCoverage] Failed to enrich '" + path + "': " + ex.Message);
                 }
             }
         }
@@ -121,7 +121,7 @@ namespace Kryeker.CodeCoverage
                 serializer.Serialize(writer, session);
             }
 
-            Debug.Log("[BranchEnricher] Added " + added + " synthetic branch points to '" + xmlPath + "'. Counts are heuristic (sequence-derived), not instrumented.");
+            Debug.Log("[BranchCoverage] Added " + added + " synthetic branch points to '" + xmlPath + "'. Counts are heuristic (sequence-derived), not instrumented.");
             return added;
         }
 

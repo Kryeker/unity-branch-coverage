@@ -1,8 +1,8 @@
 {
-    "name": "Kryeker.CodeCoverage.BranchEnricher.Tests",
-    "rootNamespace": "Kryeker.CodeCoverage.Tests",
+    "name": "Kryeker.BranchCoverage.Tests",
+    "rootNamespace": "Kryeker.BranchCoverage.Tests",
     "references": [
-        "Kryeker.CodeCoverage.BranchEnricher",
+        "Kryeker.BranchCoverage",
         "Unity.TestTools.CodeCoverage.Editor.OpenCover.Model"
     ],
     "optionalUnityReferences": [

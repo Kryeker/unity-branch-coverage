@@ -1,4 +1,4 @@
-# Code Coverage Branch Enricher (`com.kryeker.codecoverage-branch`)
+# Branch Coverage (`com.kryeker.branch-coverage`)
 
 ![Branch coverage report: Branch Coverage column populated](Documentation~/branch-coverage-report.png)
 *Enriched HTML report: the Branch Coverage column is populated (here `BranchSynthesizer` at 78.3%) instead of staying at zero as with stock `com.unity.testtools.codecoverage`.*
@@ -51,12 +51,12 @@ column is still populated.
 
 ## Wiring
 
-- `BranchCoverageEnricher` (`[InitializeOnLoad]`) subscribes to
+- `BranchCoverage` (`[InitializeOnLoad]`) subscribes to
   `UnityEditor.TestTools.CodeCoverage.Events.onCoverageSessionFinished` and enriches every
   result XML in `SessionResultPaths` in place (skips `*_fullEmpty.xml` baselines).
-- `BranchEnricherMenu` adds `Tools > Code Coverage > Enrich Branch Points In OpenCover XMLs...`
+- `BranchCoverageMenu` adds `Tools > Code Coverage > Enrich Branch Points In OpenCover XMLs...`
   for re-running enrichment over an existing results folder.
-- `BranchSynthesizer` holds the IL → `BranchPoint` logic; `EnrichFile(path)` is public so
+- `BranchSynthesizer` holds the IL → `BranchPoint` logic; `BranchCoverage.EnrichFile(path)` is public so
   CI scripts can call it after a batch run and before ReportGenerator.
 
 ## Install
@@ -64,13 +64,13 @@ column is still populated.
 Via git URL in `Packages/manifest.json`:
 
 ```json
-"com.kryeker.codecoverage-branch": "https://github.com/Kryeker/unity-codecoverage-branch.git#v1.0.0"
+"com.kryeker.branch-coverage": "https://github.com/Kryeker/unity-branch-coverage.git#v1.0.0"
 ```
 
 Or as a local folder during development:
 
 ```json
-"com.kryeker.codecoverage-branch": "file:../unity-codecoverage-branch"
+"com.kryeker.branch-coverage": "file:../unity-branch-coverage"
 ```
 
 Requires `com.unity.testtools.codecoverage: 1.2.7` (declared in this package's `package.json`).

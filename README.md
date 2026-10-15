@@ -1,4 +1,4 @@
-# Branch Coverage (`com.kryeker.branch-coverage`)
+# Branch Coverage
 
 ![Branch coverage report: Branch Coverage column populated](Documentation~/branch-coverage-report.png)
 *Enriched HTML report: the Branch Coverage column is populated (here `BranchSynthesizer` at 78.3%) instead of staying at zero as with stock `com.unity.testtools.codecoverage`.*

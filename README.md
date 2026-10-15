@@ -1,5 +1,8 @@
 # Code Coverage Branch Enricher (`com.kryeker.codecoverage-branch`)
 
+![Branch coverage report: Branch Coverage column populated](Documentation~/branch-coverage-report.png)
+*Enriched HTML report: the Branch Coverage column is populated (here `BranchSynthesizer` at 78.3%) instead of staying at zero as with stock `com.unity.testtools.codecoverage`.*
+
 Standalone Unity package: wrapper over `com.unity.testtools.codecoverage@1.2.7`
 that backfills synthetic OpenCover `<BranchPoint>`s into coverage XML, so HTML /
 Cobertura / SonarQube reports show a branch-coverage column.

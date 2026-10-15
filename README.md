@@ -4,6 +4,32 @@ Standalone Unity package: wrapper over `com.unity.testtools.codecoverage@1.2.7`
 that backfills synthetic OpenCover `<BranchPoint>`s into coverage XML, so HTML /
 Cobertura / SonarQube reports show a branch-coverage column.
 
+## Problem this package solves
+
+The stock Code Coverage package (`com.unity.testtools.codecoverage`) only reports
+**line (sequence-point) coverage** — its own branch coverage is officially not
+implemented. From the
+[Technical details → Known limitations](https://docs.unity3d.com/Packages/com.unity.testtools.codecoverage@1.2/manual/TechnicalDetails.html)
+page (v1.2):
+
+> NPath Complexity calculation and Branch Coverage are not implemented at present
+> so they will always appear as zero in the coverage report.
+
+The same note is repeated in
+[How to interpret the results](https://docs.unity3d.com/Packages/com.unity.testtools.codecoverage@1.2/manual/HowToInterpretResults.html):
+
+> Currently, the NPath Complexity and Branch Coverage aren't calculated,
+> so will always appear as zero.
+
+In practice this means every OpenCover XML ships with empty `<BranchPoints>` and
+`branchCoverage="0"` at method/class/module/session level, so the Branch Coverage
+column in HTML, Cobertura and SonarQube reports is always zero and any
+branch-coverage quality gate trivially fails.
+
+**This package fixes that**: after each coverage session it backfills synthetic
+`<BranchPoint>`s into the XML and recalculates `branchCoverage` at every level,
+so the reports show a meaningful branch-coverage column.
+
 ## Why synthetic
 
 Unity 2020.3's `UnityEngine.TestTools.Coverage` API only exposes **sequence points**
@@ -35,13 +61,13 @@ column is still populated.
 Via git URL in `Packages/manifest.json`:
 
 ```json
-"com.kryeker.codecoverage-branch": "https://github.com/<owner>/codecoverage-branch.git"
+"com.kryeker.codecoverage-branch": "https://github.com/<owner>/unity-codecoverage-branch.git"
 ```
 
 Or as a local folder during development:
 
 ```json
-"com.kryeker.codecoverage-branch": "file:../codecoverage-branch"
+"com.kryeker.codecoverage-branch": "file:../unity-codecoverage-branch"
 ```
 
 Requires `com.unity.testtools.codecoverage: 1.2.7` (declared in this package's `package.json`).
